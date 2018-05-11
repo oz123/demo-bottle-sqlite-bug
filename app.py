@@ -6,7 +6,7 @@ import bottle
 import bottlesession
 # To see the correct plugin comment this line and uncomment the one bellow
 from bottle_sqlite import SQLitePlugin
-# from bottle_sqlite import SQLitePluginFixed as SQLitePlugin
+#from bottle_sqlite import SQLitePluginFixed as SQLitePlugin
 
 db = sqlite3.connect('/tmp/test.db')
 cur = db.cursor()

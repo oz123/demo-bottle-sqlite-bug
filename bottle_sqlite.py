@@ -135,7 +135,6 @@ class SQLitePlugin(object):
         # you would have to check for callback.__wrapped__.__wrapped__
         # for each level of decoration add one __wrapped__
 
-
         def wrapper(*args, **kwargs):
             # Connect to the database
             db = sqlite3.connect(dbfile)
@@ -229,7 +228,7 @@ class SQLitePluginFixed(object):
         # Ignore it if it does not need a database handle.
 
         # this test detoriates on wrapped methods
-        argspec = inspect.getargspec(_callback)
+        # argspec = inspect.getargspec(_callback)
         # this won't work with the above check
         #
         # @app.route('/secret/:item')
@@ -259,11 +258,6 @@ class SQLitePluginFixed(object):
 
         params = inspect.signature(_callback).parameters
 
-        argspec = inspect.getargspec(_callback)
-        if keyword not in argspec:
-            print("Keyword not found in argspec!!!")
-            return callback
-        # this won't work with the above check
         if keyword not in params:
             print("Keyword not found in params!!!")
             return callback
