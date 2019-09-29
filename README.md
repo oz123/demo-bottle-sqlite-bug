@@ -19,7 +19,7 @@ def secret(item, db):
       ...
 ```
 
-The `valid_user()` plugin will throw and error like
+The `valid_user()` plugin will throw an error like
 
 ```
 Traceback (most recent call last):
